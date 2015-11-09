@@ -7,6 +7,21 @@ db = SQLAlchemy()
 ##############################################################################
 # Model definitions
 
+class User(db.Model):
+    """User of lama log website."""
+
+    __tablename__ = "users"
+
+    user_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    email = db.Column(db.string(64), nullable=True)
+
+    def __repr__(self):
+        """Provide helpful representation when printed."""
+
+        return "<User user_id=%s email=%s>" (self.user_id, self.email)
+
+
+
 class Session(db.Model):
     """Running time of a session."""
     
