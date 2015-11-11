@@ -1,21 +1,21 @@
 from NeuroPy import NeuroPy
 from model import connect_to_db, db, Session, State
 import time
+import datetime
 
 def collect():
-"""Collect attention and meditation values from NeuroSky headset 
-& store to databse"""
+    """Collect attention and meditation values from NeuroSky headset & store to databse"""
 
     print "You have reached the beginning of this function!"
-    headset_data = NeuroPy("/dev/cu.MindWaveMobile-DevA-7", 57600)
+    headset_data = NeuroPy("/dev/cu.MindWaveMobile-DevA-1", 57600)
     # Need a better way to connect to bluetooth.
 
     headset_data.start()
     current_time = time.time()
     start_time = time.time()
-    elapsed_time = current_time + 60 # Collect data from headset for an elapsed time of a minute.
+    elapsed_time = current_time + 120 # Collect data from headset for an elapsed time of a minute.
     
-    new_session = Session(utc=start_time)
+    new_session = Session(utc=datetime.datetime.utcnow())
 
     db.session.add(new_session)
     db.session.commit()
@@ -30,7 +30,7 @@ def collect():
         # print current_time, elapsed_time
         meditation = headset_data.meditation
         
-        new_state = State(utc=current_time, attention=attention, meditation=meditation, session_id=new_session.id)
+        new_state = State(utc=datetime.datetime.utcnow(), attention=attention, meditation=meditation, session_id=new_session.id)
         db.session.add(new_state)
         db.session.commit()
         time.sleep(5) # Collect data every 5 seconds.

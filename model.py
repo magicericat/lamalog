@@ -13,7 +13,7 @@ class User(db.Model):
     __tablename__ = "users"
 
     user_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    email = db.Column(db.string(64), nullable=True)
+    email = db.Column(db.String(64), nullable=True)
 
     def __repr__(self):
         """Provide helpful representation when printed."""
@@ -28,7 +28,8 @@ class Session(db.Model):
     __tablename__ = "sessions"
     
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    utc = db.Column(db.String(64), nullable=True)
+    utc = db.Column(db.DateTime, nullable=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
 
     def __repr__(self):
         return "<UTC:%s>" % (self.utc)
@@ -40,10 +41,10 @@ class State(db.Model):
     __tablename__ = "states"
     
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    utc = db.Column(db.String(64), nullable=True)
+    utc = db.Column(db.DateTime, nullable=True)
     attention = db.Column(db.Integer, nullable=True)
     meditation = db.Column(db.Integer, nullable=True)
-    session_id = db.Column(db.Integer, db.ForeignKey('sessions.utc'))
+    session_id = db.Column(db.Integer, db.ForeignKey('sessions.id'))
 
 
     def __repr__(self):
