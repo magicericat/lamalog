@@ -66,6 +66,13 @@ def eeg_states_data():
     return jsonify(data_dict)
 
 
+@app.route('/chart')
+def chart():
+    """Lama Log Dashboard"""
+
+    return render_template("mycharts.html")
+
+
 
 ##############################################################################
 if __name__ == "__main__":
