@@ -7,7 +7,7 @@ def collect():
     """Collect attention and meditation values from NeuroSky headset & store to databse"""
 
     print "You have reached the beginning of this function!"
-    headset_data = NeuroPy("/dev/cu.MindWaveMobile-DevA-1", 57600)
+    headset_data = NeuroPy("/dev/cu.MindWaveMobile-DevA-3", 57600)
     # Need a better way to connect to bluetooth.
 
     headset_data.start()
