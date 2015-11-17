@@ -47,7 +47,7 @@ class Session(db.Model):
 
 
 class State(db.Model):
-    """Cognition values."""`
+    """Cognition values."""
     
     __tablename__ = "states"
     
