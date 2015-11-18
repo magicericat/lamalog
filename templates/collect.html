@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}Record New Session{% endblock %}
+
+{% block page_specific_script_tag %}
+   <script src="/static/collect.js"></script>
+{% endblock %}
+
+{% block content %}
+
+<div class="well spaced" style="width:40%;">
+<div>
+    <h1>Record New session</h1>
+   
+
+        <div class="form-group">
+                <input type="text" id="eegPort" name="test" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <button id="startRecording" class="btn btn-danger">Start Recording!</button>
+        </div> 
+
+        <form action="/users/{{ user_id }}" method="GET">
+            <div class="form-group">
+                <input type="submit" id="showResults" value="See Results" class="btn btn-default" style="display:none">
+            </div> 
+        </form>
+
+
+<!--         <div class="form-group">
+            <input type="submit" id="startRecording" value="Start Recording!" class="btn btn-danger">
+        </div>  -->
+
+<!-- # put a TEST listener on the start button in javascript / in the listener, it's going to 
+do an AJAX call to my route and the route will call the function and pass it the port number -->
+
+
+        <!-- <div class="form-group">
+            <label>Password:
+                <input type="password" name="password" required class="form-control">
+            </label>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Log In" class="btn btn-danger">
+        </div> -->
+
+    </form>
+</div>
+</div>
+
+{% endblock %}

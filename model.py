@@ -15,6 +15,7 @@ class User(db.Model):
     user_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     email = db.Column(db.String(64), nullable=True)
     password = db.Column(db.String(64), nullable=True)
+    sessions = db.relationship("Session")
 
     def __repr__(self):
         """Provide helpful representation when printed."""

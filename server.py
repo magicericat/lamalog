@@ -24,11 +24,43 @@ def main():
 
     return render_template("homepage.html")
 
+@app.route('/about')
+def about():
+    """About Page"""
+
+    return render_template("about.html")
+
+@app.route('/collect')
+def record_new_session():
+    """Displays page to record new session."""
+
+    
+
+    return render_template("collect.html", user_id=session["user_id"])
+
+
+@app.route('/collectdata', methods=['POST'])
+def record():
+    """Record meditation session and store in database."""
+
+    print "Rainbows!"
+    port = request.form.get("port")
+    print port
+    collect(port)
+    # Collect.py should literally be nothing more than a bridge between hardware and the data that comes out of it.
+    # College.py should return an array of states. It shouldn't even know what the session is or what the user is.
+    # all it should know is given a port, return the information about the user and return it back.
+
+    
+    return "Successfully collected data!"
+
+
 @app.route('/register', methods=['GET'])
 def register_form():
     """Show form for user signup."""
 
     return render_template("register_form.html")
+
 
 @app.route('/register', methods=['POST'])
 def register_process():
@@ -94,7 +126,9 @@ def eeg_states_data():
 
     all_states = State.query.filter_by(session_id=1).all()
     # TODO: Can improve this query to get all the sessions for one user and 
-    # make a graph for each session. 
+    # make a graph for each session. It just takes session_id=1 of whoever uses this thing.
+
+    # Query the current user for the sessions. Session has the user_id. 
 
     # List comprehensions to feed into data_dictionary.
     meditation = [state.meditation for state in all_states]

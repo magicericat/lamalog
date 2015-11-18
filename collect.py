@@ -3,12 +3,13 @@ from model import connect_to_db, db, Session, State
 import time
 import datetime
 
-def collect():
-    """Collect attention and meditation values from NeuroSky headset & store to databse"""
+def collect(port):
+    return
+    """Collect attention and meditation values from NeuroSky headset & store to database"""
 
     print "You have reached the beginning of this function!"
-    headset_data = NeuroPy("/dev/cu.MindWaveMobile-DevA-3", 57600)
-    # Need a better way to connect to bluetooth.
+    port = str(port)
+    headset_data = NeuroPy("/dev/cu.MindWaveMobile-DevA-" + port, 57600)
 
     headset_data.start()
     current_time = time.time()
@@ -16,7 +17,10 @@ def collect():
     elapsed_time = current_time + 120 # Collect data from headset for an elapsed time of a minute.
     
     new_session = Session(utc=datetime.datetime.utcnow())
-
+    
+    # TODO: figure out how to get current_user
+    # current_user.sessions.append(new_session)
+    # db.session.add(current_user)
     db.session.add(new_session)
     db.session.commit()
     print new_session.id
@@ -38,6 +42,8 @@ def collect():
     # headset_data.stop()
     # print attention
     return
+
+    # append the values to an array and return an array
 
 
 if __name__ == "__main__":

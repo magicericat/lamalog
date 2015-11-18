@@ -17,6 +17,9 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
 
+    <!-- Code specific to the page in question -->
+    {% block page_specific_script_tag %}{% endblock %}
+
     <style>
         h1, h2, h3, .navbar-brand { font-family: "Raleway"; }
 
@@ -88,12 +91,17 @@
         <div class="collapse navbar-collapse"
              id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="/users/{{ session['user_id'] }}">View Dashboard</a></li>
-                <li><a href="/about">About</a></li>
+              {% if "user_id" in session %}
+                  <li><a href="/about">About</a></li>
+                  <li><a href="/collect">New Recording</a></li>
+              {% else %}
+                  <li><a href="/about">About</a></li>
+              {% endif %}
+
             </ul>
             <ul class="nav navbar-nav navbar-right">
               {% if "user_id" in session %}
-                  <li><a href="/users/{{ session['user_id'] }}">Profile</a></li>
+                  <li><a href="/users/{{ session['user_id'] }}">My Dashboard</a></li>
                   <li><a href="/logout">Logout</a></li>
               {% else %}
                   <li><a href="/register">Register</a></li>
@@ -121,6 +129,6 @@
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-    <footer>Erica Johnson</footer>
+<!--     <footer>Erica Johnson</footer> -->
 </body>
 </html>
