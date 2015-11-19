@@ -46,7 +46,7 @@ def record():
     print "Rainbows!"
     port = request.form.get("port")
     print port
-    collect(port)
+    collect(port, session["user_id"])
     # Collect.py should literally be nothing more than a bridge between hardware and the data that comes out of it.
     # College.py should return an array of states. It shouldn't even know what the session is or what the user is.
     # all it should know is given a port, return the information about the user and return it back.
@@ -123,8 +123,12 @@ def eeg_states_data():
     # Look up current_user with Flask
     # current_user.session....
     # from session, query all the states
+    last_session = Session.query.filter_by(user_id=session["user_id"]).all()[-1]
+    print "user_id", session["user_id"]
 
-    all_states = State.query.filter_by(session_id=1).all()
+    print last_session
+
+    all_states = State.query.filter_by(session_id=last_session.id).all()
     # TODO: Can improve this query to get all the sessions for one user and 
     # make a graph for each session. It just takes session_id=1 of whoever uses this thing.
 

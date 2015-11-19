@@ -15,7 +15,9 @@ class User(db.Model):
     user_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     email = db.Column(db.String(64), nullable=True)
     password = db.Column(db.String(64), nullable=True)
-    sessions = db.relationship("Session")
+    sessions = db.relationship("Session", order_by="Session.utc")
+
+
 
     def __repr__(self):
         """Provide helpful representation when printed."""
@@ -24,11 +26,12 @@ class User(db.Model):
 
     @classmethod
     def get_user_by_id(cls, uid):
-        return User.query.filter_by(user_id=uid).first()
+        return cls.query.filter_by(user_id=uid).first()
 
     @classmethod
     def get_user_by_email(cls, email):
-        return User.query.filter_by(email=email).first()
+        return cls.query.filter_by(email=email).first()
+
 
 
 class Session(db.Model):
@@ -41,7 +44,7 @@ class Session(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
     # Link to intermediary table that is states. Map one session to multiple states.
     # And one user maps to multiple sessions.
-    states = db.relationship("State")
+    states = db.relationship("State", order_by="State.utc")
 
     def __repr__(self):
         return "<UTC:%s>" % (self.utc)

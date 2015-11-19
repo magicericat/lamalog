@@ -3,8 +3,7 @@ from model import connect_to_db, db, Session, State
 import time
 import datetime
 
-def collect(port):
-    return
+def collect(port, user_id):
     """Collect attention and meditation values from NeuroSky headset & store to database"""
 
     print "You have reached the beginning of this function!"
@@ -16,7 +15,7 @@ def collect(port):
     start_time = time.time()
     elapsed_time = current_time + 120 # Collect data from headset for an elapsed time of a minute.
     
-    new_session = Session(utc=datetime.datetime.utcnow())
+    new_session = Session(utc=datetime.datetime.utcnow(), user_id=user_id)
     
     # TODO: figure out how to get current_user
     # current_user.sessions.append(new_session)
