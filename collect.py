@@ -13,7 +13,7 @@ def collect(port, user_id):
     headset_data.start()
     current_time = time.time()
     start_time = time.time()
-    elapsed_time = current_time + 120 # Collect data from headset for an elapsed time of a minute.
+    elapsed_time = current_time + 60 # Collect data from headset for an elapsed time of a minute.
     
     new_session = Session(utc=datetime.datetime.utcnow(), user_id=user_id)
     
