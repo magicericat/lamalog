@@ -45,6 +45,11 @@ class Session(db.Model):
     # Link to intermediary table that is states. Map one session to multiple states.
     # And one user maps to multiple sessions.
     states = db.relationship("State", order_by="State.utc")
+    meditation_high_score = db.Column(db.Integer)
+
+    def generate_high_score(self):
+        pass
+        #calculates high score and stores it in meditation_high_score
 
     def __repr__(self):
         return "<UTC:%s>" % (self.utc)

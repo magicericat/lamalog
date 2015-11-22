@@ -16,7 +16,7 @@ def collect(port, user_id):
     elapsed_time = current_time + 60 # Collect data from headset for an elapsed time of a minute.
     
     new_session = Session(utc=datetime.datetime.utcnow(), user_id=user_id)
-    
+
     # TODO: figure out how to get current_user
     # current_user.sessions.append(new_session)
     # db.session.add(current_user)
@@ -38,6 +38,7 @@ def collect(port, user_id):
         db.session.commit()
         time.sleep(5) # Collect data every 5 seconds.
 
+    new_session.generate_high_score()
     # headset_data.stop()
     # print attention
     return
