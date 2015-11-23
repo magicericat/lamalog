@@ -38,7 +38,7 @@ def collect(port, user_id):
         db.session.commit()
         time.sleep(5) # Collect data every 5 seconds.
 
-    new_session.generate_high_score()
+    # new_session.generate_high_score()
     # headset_data.stop()
     # print attention
     return

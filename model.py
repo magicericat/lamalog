@@ -1,6 +1,7 @@
 """Models and database functions for EEG tracking project."""
 
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.sql import func
 
 db = SQLAlchemy()
 
@@ -45,11 +46,14 @@ class Session(db.Model):
     # Link to intermediary table that is states. Map one session to multiple states.
     # And one user maps to multiple sessions.
     states = db.relationship("State", order_by="State.utc")
-    meditation_high_score = db.Column(db.Integer)
+    # meditation_high_score = db.Column(db.Integer)
 
-    def generate_high_score(self):
-        pass
-        #calculates high score and stores it in meditation_high_score
+    # def generate_high_score(self):
+    #     """Generates high meditation score and stores it in meditation_high_score."""
+    #     meditation_high_score = session.query(func.max(Score.score).label("max_score"), 
+    #                 func.sum(Score.score).label("total_score"),
+    #                 )
+    #     pass
 
     def __repr__(self):
         return "<UTC:%s>" % (self.utc)

@@ -93,9 +93,11 @@
             <ul class="nav navbar-nav">
               {% if "user_id" in session %}
                   <li><a href="/about">About</a></li>
+                  <li><a href="/top10">Top Lamas</a></li>
                   <li><a href="/collect">New Recording</a></li>
               {% else %}
                   <li><a href="/about">About</a></li>
+                  <li><a href="/top10">Top Lamas</a></li>
               {% endif %}
 
             </ul>
@@ -114,6 +116,7 @@
     </div>
     <!-- /.container-fluid -->
 </nav>
+
 <div id="extending">
     {% for flash in get_flashed_messages() %}
       <div class="alert alert-danger" style="width:90%; margin:0 auto;">{{ flash }}</div>

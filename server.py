@@ -30,11 +30,15 @@ def about():
 
     return render_template("about.html")
 
+@app.route('/top10')
+def high_scores():
+    """Page with top 10 meditation scores."""
+
+    return render_template("top10.html")
+
 @app.route('/collect')
 def record_new_session():
     """Displays page to record new session."""
-
-    
 
     return render_template("collect.html", user_id=session["user_id"])
 
