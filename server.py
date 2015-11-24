@@ -2,6 +2,7 @@
 
 from flask import Flask, render_template, request, flash, redirect, session, jsonify
 from flask_debugtoolbar import DebugToolbarExtension
+from sqlalchemy import desc
 
 import time 
 import datetime
@@ -34,7 +35,12 @@ def about():
 def high_scores():
     """Page with top 10 meditation scores."""
 
-    return render_template("top10.html")
+    top10 = Session.query.filter_by().order_by(desc(Session.meditation_high_score)).all()
+    # query to get email to pass into top 10
+    print top10
+
+    return render_template("top10.html", top10=top10)
+
 
 @app.route('/collect')
 def record_new_session():
@@ -169,6 +175,8 @@ def eeg_states_data():
             }
         ]
     }
+
+    print data_dict
     return jsonify(data_dict)
 
 

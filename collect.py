@@ -13,15 +13,15 @@ def collect(port, user_id):
     headset_data.start()
     current_time = time.time()
     start_time = time.time()
-    elapsed_time = current_time + 60 # Collect data from headset for an elapsed time of a minute.
+    elapsed_time = current_time + 30 # Collect data from headset for an elapsed time of a minute.
     
     new_session = Session(utc=datetime.datetime.utcnow(), user_id=user_id)
 
     # TODO: figure out how to get current_user
     # current_user.sessions.append(new_session)
     # db.session.add(current_user)
-    db.session.add(new_session)
-    db.session.commit()
+    # db.session.add(new_session)
+    # db.session.commit()
     print new_session.id
 
     # Add session to database first.
@@ -34,11 +34,14 @@ def collect(port, user_id):
         meditation = headset_data.meditation
         
         new_state = State(utc=datetime.datetime.utcnow(), attention=attention, meditation=meditation, session_id=new_session.id)
-        db.session.add(new_state)
-        db.session.commit()
-        time.sleep(5) # Collect data every 5 seconds.
+        # db.session.add(new_state)
+        # db.session.commit()
+        new_session.states.append(new_state)
+        time.sleep(3) # Collect data every 3 seconds.
 
-    # new_session.generate_high_score()
+    new_session.generate_high_score()
+    db.session.add(new_session)
+    db.session.commit()
     # headset_data.stop()
     # print attention
     return
