@@ -21,6 +21,10 @@ h2 {
     margin-bottom: 2em;
 }
 
+#myChart{
+  width: 800px;
+}
+
 /*#everythingelse {
     padding-top: 70px;
 }*/
