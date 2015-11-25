@@ -35,11 +35,17 @@ def about():
 def high_scores():
     """Page with top 10 meditation scores."""
 
+  
     top10 = Session.query.filter_by().order_by(desc(Session.meditation_high_score)).all()
+
+    users = [User.get_user_by_id(user.user_id) for user in top10]
+
+    # users = User.query.all()
+
     # query to get email to pass into top 10
     print top10
 
-    return render_template("top10.html", top10=top10)
+    return render_template("top10.html", top10=top10, users=users)
 
 
 @app.route('/collect')

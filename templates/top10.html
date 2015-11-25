@@ -17,10 +17,11 @@
         {% set counter = 0 %}
         {% for score in top10 %}
         <tr>
-            {% set counter = counter + 1 %}
-            <td>{{ counter }}</td>
+            
+            <td>{{ counter + 1 }}</td>
             <td>{{ score.meditation_high_score }}</td>
-            <td>{{ score.user_id }}</td>
+            <td>{{ users[counter].email }}</td>
+            {% set counter = counter + 1 %}
         </tr>
         {%  endfor %}
 

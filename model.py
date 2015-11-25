@@ -67,10 +67,6 @@ class Session(db.Model):
 
         self.meditation_high_score = zen_score
 
-        # session.query(func.max(Score.score).label("max_score"), 
-        #             func.sum(Score.score).label("total_score"),
-        #             )
-
     # def __repr__(self):
     #     return "<UTC:%s>" % (self.utc)
 
