@@ -50,7 +50,22 @@ class Session(db.Model):
 
     def generate_high_score(self):
         """Generates high meditation score and stores it in meditation_high_score."""
-        self.meditation_high_score = 5
+        
+        selection = self.states
+
+        attn = []
+        med = []
+        for point in selection:
+            if point.attention !=0:
+                attn.append(point.attention)
+            if point.meditation !=0:
+                med.append(point.meditation)
+
+        att_avg = sum(attn)/len(attn)
+        med_avg = sum(med)/len(med)
+        zen_score = abs(att_avg - med_avg)
+
+        self.meditation_high_score = zen_score
 
         # session.query(func.max(Score.score).label("max_score"), 
         #             func.sum(Score.score).label("total_score"),
