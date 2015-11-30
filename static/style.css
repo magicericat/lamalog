@@ -53,9 +53,21 @@ div.container {
     border-color: #69c6f0;
 }
 
+.btn.btn-danger:hover
+{
+  background-color: #ff9933;
+}
+
+
 .btn-success {
     background-color: #69c6f0;
     border-color: #69c6f0;
+}
+
+
+.btn.btn-success:hover
+{
+  background-color: #ff9933;
 }
 
 /*#everythingelse {
