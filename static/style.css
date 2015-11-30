@@ -25,6 +25,23 @@ h2 {
   width: 800px;
 }
 
+div.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+#logo{
+  margin-left: 5px;
+  margin-top: -14px;
+}
+
+.intro-message{
+  margin-top: 200px;
+}
 /*#everythingelse {
     padding-top: 70px;
 }*/
