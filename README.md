@@ -1,4 +1,4 @@
-![LamaState Logo](/static/lamastate.png)
+![LamaState Logo](https://github.com/magicericat/lamastate/blob/master/static/LamaState.png)
 
 Lama State is a meditation tool that interfaces with the NeuroSky headset to collect, analyze, and keep track of brainwave recordings. “Attention” and “Meditation” values range from 0 to 100 and increase when users are focused and relaxed and decrease when they are uneasy or stressed - these values are presented to users in a series of meaningful time-series graphs. Users with a NeuroSky headset will be able to record meditation sessions, compare a session against their past efforts, and even see how well they rank on a collective leaderboard. 
 
@@ -14,7 +14,7 @@ Lama State is a meditation tool that interfaces with the NeuroSky headset to col
 
 ## <a name="terms"></a>Terminology
 #### NeuroSky Mindwave Mobile Headset
-![NeuroSky Mindwave Mobile Headset](/static/img/mindwave.png)
+![NeuroSky Mindwave Mobile Headset](https://github.com/magicericat/lamastate/blob/master/static/mindwave.jpg)
 The Neurosky MindWave Mobile is an EEG headset, or brain activity monitor. The headset safely detects brainwave signals and is able to interact with the Lama State app.
 #### Attention
 Attention values range from 0 to 100 and indicate the intensity of mental “focus” or “attention.” The attention level increases when a user focuses on a single thought or an external object, and decreases when distracted.
