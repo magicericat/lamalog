@@ -10,15 +10,15 @@ Lama State is a meditation tool that interfaces with the NeuroSky headset to col
 * [Author](#author)
 
 ## <a name="inspiration"></a>Inspiration
-[Strava](http://www.strava.com) meets [donothingfortwominutes.com](http://www.donothingfortwominutes.com)
+[Strava](http://www.strava.com) meets [donothingfor2minutes.com](http://www.donothingfor2minutes.com)
 
 ## <a name="terms"></a>Terminology
-#### NeuroSky Mindwave Mobile Headset
+##### NeuroSky Mindwave Mobile Headset
 ![NeuroSky Mindwave Mobile Headset](https://github.com/magicericat/lamastate/blob/master/static/mindwave.jpg)
 The Neurosky MindWave Mobile is an EEG headset, or brain activity monitor. The headset safely detects brainwave signals and is able to interact with the Lama State app.
-#### Attention
+##### Attention
 Attention values range from 0 to 100 and indicate the intensity of mental “focus” or “attention.” The attention level increases when a user focuses on a single thought or an external object, and decreases when distracted.
-#### Meditation
+##### Meditation
 Meditation values ranges from 0 to 100 and indicate the level of mental “calmness” or “relaxation.” The meditation level increases when users relax the mind and decreases when they are uneasy or stressed.
 
 ## <a name="technicalstack"></a>Technical Stack
@@ -36,13 +36,21 @@ Meditation values ranges from 0 to 100 and indicate the level of mental “calmn
 
 
 ## <a name="features"></a>Features
-
-####Record a New Session
-
-####Dashboard
-
-####Leaderboard
-
+- User Accounts
+- Record a new session
+  - Wrote a collect.py script to pull data off of a bluetooth EEG headset
+  - Tables for Users, Sessions, and States
+  - Stores data in SQLite3 database
+- Brain States Dashboard
+  - After a session, a user will be able to see a plot of their meditation and attention values over time
+  - Used list comprehension in Chart.js to display
+- Leaderboard
+  - Wrote a function to calculate a max meditation score 
+  - SQLAlchemy queries to see leaderboards and one user's session compares to others
+- Boostrap/HTML/CSS
+  - Integrated front-end styling with bootstrap
+- Tests
+  - Working on implementing unit tests
 
 
 ## <a name="author"></a>Author
