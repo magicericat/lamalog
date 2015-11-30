@@ -82,7 +82,7 @@
 <div class="container">
 <div class="well spaced" style="width:40%;">
 <div>
-    <h1>Record New session</h1>
+    <h1>New Session</h1>
    
 
         <div class="form-group">
@@ -92,7 +92,7 @@
         </div>
 
         <div class="form-group">
-            <button id="startRecording" class="btn btn-danger">Start Recording!</button>
+            <button id="startRecording" class="btn btn-danger">Record!</button>
         </div> 
 
         <form action="/users/{{ user_id }}" method="GET">
@@ -103,13 +103,15 @@
 
     <div id="countdown" style="display:none">
         <h2>Countdown</h2>
+        <center>
         <p>
 <!--             <button id="startCountdown">Start</button> 
             <button id="stopCountdown">Stop</button> 
             <button id="pauseCountdown">Pause</button> 
             <button id="resetCountdown">Reset</button>  -->
-            <input id="countdown_clock" placeholder="00:00" value="00:60">
+            <input id="countdown_clock" placeholder="00:00" value="00:40">
         </p>
+    </center>
     </div>
 </div>
 

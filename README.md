@@ -1,4 +1,4 @@
-![LamaState Logo](https://github.com/magicericat/lamastate/blob/master/static/lamastate.gif)
+![LamaState Logo](https://github.com/magicericat/lamastate/blob/master/static/screenshot.png)
 
 Lama State is a meditation tool and Flask web app that interfaces with the NeuroSky headset to collect, analyze, and keep track of brainwave recordings. “Attention” and “Meditation” values range from 0 to 100 and increase when users are focused and relaxed and decrease when they are uneasy or stressed - these values are presented to users in a series of meaningful time-series graphs. Users with a NeuroSky headset will be able to record meditation sessions, compare a session against their past efforts, and even see how well they rank on a collective leaderboard. 
 
@@ -57,3 +57,4 @@ Meditation values ranges from 0 to 100 and indicate the level of mental “calmn
 
 ## <a name="author"></a>Author
 Erica Johnson is a neuroscientist-turned-engineer living in San Francisco, CA.
+[LinkedIn](https://www.linkedin.com/in/ericatjohnson)

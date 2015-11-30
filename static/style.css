@@ -53,6 +53,11 @@ div.container {
     border-color: #69c6f0;
 }
 
+.btn-success {
+    background-color: #69c6f0;
+    border-color: #69c6f0;
+}
+
 /*#everythingelse {
     padding-top: 70px;
 }*/
