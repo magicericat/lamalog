@@ -5,6 +5,7 @@ Lama State is a meditation tool and Flask web app that interfaces with the Neuro
 ## Table of Contents
 * [Inspiration](#inspiration)
 * [Terminology](#terms)
+* [Getting Started](#gettingstarted)
 * [Technical Stack](#technicalstack)
 * [Features](#features)
 * [Author](#author)
@@ -21,6 +22,20 @@ The Neurosky MindWave Mobile is an EEG headset, or brain activity monitor. The h
 Attention values range from 0 to 100 and indicate the intensity of mental “focus” or “attention.” The attention level increases when a user focuses on a single thought or an external object, and decreases when distracted.
 ##### Meditation
 Meditation values ranges from 0 to 100 and indicate the level of mental “calmness” or “relaxation.” The meditation level increases when users relax the mind and decreases when they are uneasy or stressed.
+
+## <a name="gettingstarted"></a>Getting Started
+
+0.* Dependencies: NeuroSky EEG headset  
+
+1. Install requirements at the command prompt if you haven't yet:
+
+        $ pip install requirements.txt
+
+2. Start the server:
+        
+        $ python server.py
+
+3. Visit http://localhost:5000 in your web browser.
 
 ## <a name="technicalstack"></a>Technical Stack
 * [Python](https://www.python.org/)
