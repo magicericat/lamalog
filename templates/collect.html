@@ -2,7 +2,6 @@
 {% block title %}Record New Session{% endblock %}
 
 {% block page_specific_script_tag %}
-<div class="container">
    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
    <script src="/static/tock.js"></script>
    <script src="/static/collect.js"></script>
@@ -75,12 +74,12 @@
             });
         }
     </script>
-</head>
 
 {% endblock %}
 
 {% block content %}
 
+<div class="container">
 <div class="well spaced" style="width:40%;">
 <div>
     <h1>Record New session</h1>
@@ -112,6 +111,7 @@
             <input id="countdown_clock" placeholder="00:00" value="00:60">
         </p>
     </div>
+</div>
 
 
 <!--         <div class="form-group">

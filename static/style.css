@@ -42,6 +42,17 @@ div.container {
 .intro-message{
   margin-top: 200px;
 }
+
+#extending .alert.alert-danger{
+  background-color: #69c6f0;
+  border-color: #69c6f0;
+}
+
+.btn-danger {
+    background-color: #69c6f0;
+    border-color: #69c6f0;
+}
+
 /*#everythingelse {
     padding-top: 70px;
 }*/
