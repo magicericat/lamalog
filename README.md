@@ -41,6 +41,7 @@ Meditation values ranges from 0 to 100 and indicate the level of mental “calmn
 * [Flask](http://flask.pocoo.org/)
 * SQLite3
 * SQLAlchemy
+* NeuroPy
 * Javascript
 * [jQuery](https://jquery.com/)
 * AJAX/JSON
@@ -62,7 +63,7 @@ Meditation values ranges from 0 to 100 and indicate the level of mental “calmn
   - List comprehension and Chart.js
 - Leaderboard
   - Wrote a function to calculate a max meditation score 
-  - SQLAlchemy queries to see rank on collective leaderboard
+  - SQLAlchemy queries & Jinja to generate rank on collective leaderboard
 - Bootstrap/HTML/CSS
   - Integrated front-end styling with bootstrap
 - Tests
