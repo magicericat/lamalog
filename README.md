@@ -24,8 +24,7 @@ Attention values range from 0 to 100 and indicate the intensity of mental “foc
 Meditation values ranges from 0 to 100 and indicate the level of mental “calmness” or “relaxation.” The meditation level increases when users relax the mind and decreases when they are uneasy or stressed.
 
 ## <a name="gettingstarted"></a>Getting Started
-
-0.* Dependencies: NeuroSky EEG headset  
+* Dependencies: NeuroSky EEG headset  
 
 1. Install requirements at the command prompt if you haven't yet:
 
