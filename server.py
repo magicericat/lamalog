@@ -31,9 +31,9 @@ def about():
 
     return render_template("about.html")
 
-@app.route('/top10')
+@app.route('/leaderboard')
 def high_scores():
-    """Page with top 10 meditation scores."""
+    """Page with leaderboard scores."""
 
   
     top10 = Session.query.filter_by().order_by(desc(Session.meditation_high_score)).all()
@@ -45,7 +45,7 @@ def high_scores():
     # query to get email to pass into top 10
     print top10
 
-    return render_template("top10.html", top10=top10, users=users)
+    return render_template("leaderboard.html", top10=top10, users=users)
 
 
 @app.route('/collect')
@@ -200,6 +200,6 @@ if __name__ == "__main__":
 
     app.debug = True
     connect_to_db(app)
-    DebugToolbarExtension(app)
+    # DebugToolbarExtension(app)
     app.run()
 
