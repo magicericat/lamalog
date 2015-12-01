@@ -70,4 +70,4 @@ Meditation values ranges from 0 to 100 and indicate the level of mental “calmn
 
 
 ## <a name="author"></a>Author
-Erica Johnson is a neuroscientist-turned-engineer living in San Francisco, CA. Check out her LinkedIn[here](https://www.linkedin.com/in/ericatjohnson).
+Erica Johnson is a neuroscientist-turned-engineer living in San Francisco, CA. Check out her LinkedIn [here](https://www.linkedin.com/in/ericatjohnson).
